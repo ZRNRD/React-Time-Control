@@ -1,0 +1,43 @@
+.menu{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    & input:active{
+        cursor: pointer;
+        background: rgb(255, 170, 73);
+    };
+    & input:hover{
+        cursor: pointer;
+        background: rgb(255, 170, 73);
+    }
+    &__items{
+        display: flex;
+        justify-content: center;
+        height: 0px;
+        transition: all .3s ease;
+        &-show{
+            height: 50px;
+        }
+    }
+    &__item{
+        width: 50%;
+        height: 50px;
+        border: none;
+        background: rgb(100, 100, 100);
+        &-active{
+            width: 50%;
+            height: 50px;
+            border: none;
+            background: rgb(100, 100, 100);
+            background: green;
+        }
+        &:first-child{
+            border-right: 1px solid black;
+        }
+    }
+    &-show{
+        background: rgb(138, 138, 138);
+        border: none;
+        height: 50px;
+    }
+}
