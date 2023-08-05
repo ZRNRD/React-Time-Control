@@ -17,6 +17,7 @@
         transition: all .3s ease;
         &-show{
             height: 50px;
+            transition: all .3s ease;
         }
     }
     &__item{
