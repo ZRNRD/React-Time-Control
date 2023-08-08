@@ -1,0 +1,95 @@
+.timer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+}
+
+.timer__nums{
+    display: flex;
+    justify-content: center;
+    & div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    & input{
+        border: 1px solid rgb(124, 124, 124);
+        height: 70px;
+        width: 70px;
+    }
+    
+}
+
+.num{
+    text-align: center;
+    font-size: 100px;
+}
+
+.timer__buttons{
+    display: flex;
+    justify-content: center;
+    & input{
+        border: none;
+        height: 40px;
+        width: 150px;
+        margin: 0 10px;
+        border-radius: 5px;
+        background: rgb(138, 138, 138);
+    }
+}
+
+.timer__alarm{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: white;
+    border: 1px solid #eee;
+    width: 70vw;
+    height: 70vh;
+    transition: all .4s ease;
+    transform: scale(0);
+    &__icon{
+        width: 80px;   
+    }
+    &-stop{
+        margin-top: 40px;
+        border: 1px solid rgb(124, 124, 124);
+        border-radius: 5px;
+    }
+    &-show{
+        transform: scale(1);
+    }
+}
+
+.ringing-bell{
+    animation: Ringing 1s ease-in-out infinite;
+}
+
+@keyframes Ringing{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(45deg);
+    }
+    50%{
+        transform: rotate(-45deg);
+    }
+    75%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.hide{
+    display: none;
+}
