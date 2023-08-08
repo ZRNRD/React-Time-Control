@@ -13,13 +13,13 @@ export const Menu = ({changeHeader}) => {
                     <input type="button" 
                         className={activeButton === 'Таймер' ? style["menu__item-active"] : style["menu__item"]} 
                         value="Таймер"
-                        onClick={()=>{changeHeader("Таймер"); changeActiveButton('Таймер')}}></input>
+                        onClick={()=>{changeHeader("Таймер"); changeActiveButton('Таймер'); isShowMenu(false)}}></input>
                 </NavLink>
                 <NavLink to="/stopwatch" >
                     <input type="button" 
                         className={activeButton === 'Секундомер' ? style["menu__item-active"] : style["menu__item"]} 
                         value="Секундомер"
-                        onClick={()=>{changeHeader("Секундомер"); changeActiveButton('Секундомер')}}></input>
+                        onClick={()=>{changeHeader("Секундомер"); changeActiveButton('Секундомер'); isShowMenu(false)}}></input>
                 </NavLink>
             </div>
             <input type="button" className={style["menu-show"]} value="Меню" onClick={()=>{isShowMenu(!showMenu)}}></input>
