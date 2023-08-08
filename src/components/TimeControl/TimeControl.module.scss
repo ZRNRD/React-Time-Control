@@ -1,0 +1,30 @@
+.time-control{
+    background: #eee;
+    height: 100vh;
+}
+
+.time-control input{
+    font-size: 25px;
+    height: 50px;
+    transition: all .1s ease;
+}
+.time-control input:hover{
+    cursor: pointer;
+    background: rgb(255, 170, 73);
+}
+.time-control input:active{
+    cursor: pointer;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+.time-control__header{
+    text-align: center;
+    font-size: 40px;
+}
+
+.time-control__content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+}
