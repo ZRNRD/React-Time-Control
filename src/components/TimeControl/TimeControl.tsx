@@ -10,15 +10,17 @@ import style from './TimeControl.module.scss';
 
 export const TimeControl = () => {
     const [header, changeHeader] = React.useState("Таймер");
+    const [isButtonsBlocked, toggleIsButtonsBlocked] = React.useState(false);
     return (
         <div className={style["container"]}>
             <div className={style["time-control"]}>
                 <h1 className={style["time-control__header"]}>{header}</h1>
-                <Menu changeHeader={changeHeader}/>
+                <Menu changeHeader={changeHeader} isButtonsBlocked = {isButtonsBlocked}/>
                 <div className={style["time-control__content"]}>
                     <Routes>
                         <Route path="/" element={ <Navigate to="/timer" /> }/>
-                        <Route path="/timer" element={<Timer />} />
+                        <Route path="/timer" element={<Timer isButtonsBlocked = {isButtonsBlocked} 
+                            toggleIsButtonsBlocked={toggleIsButtonsBlocked}/>} />
                         <Route path="/stopwatch" element={<Stopwatch />} />
                     </Routes>
                 </div>

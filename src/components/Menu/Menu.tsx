@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import style from './Menu.module.scss'; 
 
-export const Menu = ({changeHeader}:any) => {
+export const Menu = ({changeHeader, isButtonsBlocked}:any) => {
     const [showMenu, isShowMenu] = React.useState(false);
     const [activeButton, changeActiveButton] = React.useState('Таймер');
     return (
@@ -22,7 +22,7 @@ export const Menu = ({changeHeader}:any) => {
                         onClick={()=>{changeHeader("Секундомер"); changeActiveButton('Секундомер'); isShowMenu(false)}}></input>
                 </NavLink>
             </div>
-            <input type="button" className={style["menu-show"]} value="Меню" onClick={()=>{isShowMenu(!showMenu)}}></input>
+            <input disabled = {isButtonsBlocked} type="button" className={style["menu-show"]} value="Меню" onClick={()=>{isShowMenu(!showMenu)}}></input>
         </div>
     );
 }
