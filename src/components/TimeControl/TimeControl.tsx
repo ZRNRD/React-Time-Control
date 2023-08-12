@@ -1,9 +1,9 @@
 import * as React from 'react';
 import {Route, Routes, Navigate } from 'react-router-dom';
 
-import { Menu } from '../Menu/Menu.tsx';
-import { Timer } from '../Timer/Timer.tsx';
-import { Stopwatch } from '../Stopwatch/Stopwatch.tsx';
+import { Menu } from '../Menu/Menu';
+import { Timer } from '../Timer/Timer';
+import { Stopwatch } from '../Stopwatch/Stopwatch';
 
 import style from './TimeControl.module.scss'; 
 

@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import style from './Menu.module.scss'; 
 
-export const Menu = ({changeHeader}) => {
+export const Menu = ({changeHeader}:any) => {
     const [showMenu, isShowMenu] = React.useState(false);
     const [activeButton, changeActiveButton] = React.useState('Таймер');
     return (
