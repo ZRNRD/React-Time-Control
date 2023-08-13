@@ -101,8 +101,12 @@ export const Timer = ({isButtonsBlocked, toggleIsButtonsBlocked}:any) => {
         ?<div className={style["timer__buttons"]}>
             <input type="button" className={style["timer__cancel"]} value="СБРОС" 
                 onClick={()=>{toggleIsTimerStarted(false); toggleIsButtonsBlocked(false); clearInterval(interval); changeTime(0)}}></input>
-            <input type="button" className={style["timer__pause"]} value="ПАУЗА" 
+            {isButtonsBlocked
+            ?<input type="button" className={style["timer__pause"]} value="ПАУЗА" 
                 onClick={()=>{ toggleIsButtonsBlocked(false); clearInterval(interval);}}></input>
+            :<input type="button" className={style["timer__pause"]} value="ДАЛЕЕ" 
+                onClick={()=>{startTimer();}}></input>
+            }
         </div>
         :<div className={style["timer__buttons"]}>
             <input type="button" className={style["timer__start"]} value="ПУСК" 
