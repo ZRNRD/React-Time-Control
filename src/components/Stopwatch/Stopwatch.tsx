@@ -11,11 +11,14 @@ export const Stopwatch = ({isButtonsBlocked, toggleIsButtonsBlocked}:any) => {
     const [time, setTime] = React.useState(0);
     const [stopWatchStartInterval, setstopWatchStartInterval]:[alarmInterval:any, setAlarmInterval:any] = React.useState(null);
 
+    const [intervalList, setIntervalList]:[intervalList:any, setIntervalList:any] = React.useState([]);
+
     let stopwatchTime = time;
 
     const stopWatchStart = () => {
         isStopwatchStartedSet(true);
         toggleIsButtonsBlocked(true);
+        setIntervalList([]);
         setstopWatchStartInterval(setInterval(()=>{
             stopwatchTime = stopwatchTime + 10;
             setTime(stopwatchTime);
@@ -29,7 +32,11 @@ export const Stopwatch = ({isButtonsBlocked, toggleIsButtonsBlocked}:any) => {
         setTime(0);
         isStopwatchStartedSet(false);
         toggleIsButtonsBlocked(false);
-    }
+    };
+
+    const addNewInterval = () => {
+        intervalList.push(getTimeFromMilliseconds(time));
+    };
 
     return (
     <div className={style["stopwatch"]}>
@@ -44,7 +51,7 @@ export const Stopwatch = ({isButtonsBlocked, toggleIsButtonsBlocked}:any) => {
             ?<div className={style["stopwatch__buttons"]}>
                 <input type="button" className={style["stopwatch-cancel hide"]} value="СТОП" 
                     onClick={()=>{stopwatchStop();}}></input>
-                <input type="button" className={style["stopwatch-interval hide"]} value="ИНТЕРВАЛ"></input>
+                <input type="button" className={style["stopwatch-interval hide"]} value="ИНТЕРВАЛ" onClick={addNewInterval}></input>
             </div>
             :<div className={style["stopwatch__buttons"]}>
                 <input type="button" className={style["stopwatch-start"]} value="СТАРТ" 
@@ -56,7 +63,9 @@ export const Stopwatch = ({isButtonsBlocked, toggleIsButtonsBlocked}:any) => {
                    
         <div>
             <p className={style["stopwatch__intervals-header"]}>Интервалы:</p>
-            <ol className={style["stopwatch__intervals-list"]} reversed></ol>
+            <ol className={style["stopwatch__intervals-list"]}>
+                {intervalList.map((interval:string)=><li> {interval} </li>).reverse()}
+            </ol>
         </div>
     </div>
     );
