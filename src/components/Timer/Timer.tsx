@@ -34,14 +34,14 @@ export const Timer = ({isButtonsBlocked, toggleIsButtonsBlocked}:any) => {
         setAlarmInterval(null);
     }
 
-    let testTime = time;
+    let timerTime = time;
 
     const startTimer = () => {
         if(time !== 0){
             toggleIsTimerStarted(true);
             toggleIsButtonsBlocked(true);
             changeInterval(setInterval(()=>{
-                if(testTime === 1){
+                if(timerTime === 1){
                     changeTime(0);
                     clearInterval(interval);
                     changeInterval(null);
@@ -51,8 +51,8 @@ export const Timer = ({isButtonsBlocked, toggleIsButtonsBlocked}:any) => {
                     ringingBell();
                     
                 }else{
-                    testTime--;
-                    changeTime(testTime);
+                    timerTime--;
+                    changeTime(timerTime);
                 };
             }, 1000));
         };

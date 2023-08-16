@@ -21,7 +21,8 @@ export const TimeControl = () => {
                         <Route path="/" element={ <Navigate to="/timer" /> }/>
                         <Route path="/timer" element={<Timer isButtonsBlocked = {isButtonsBlocked} 
                             toggleIsButtonsBlocked={toggleIsButtonsBlocked}/>} />
-                        <Route path="/stopwatch" element={<Stopwatch />} />
+                        <Route path="/stopwatch" element={<Stopwatch isButtonsBlocked = {isButtonsBlocked} 
+                            toggleIsButtonsBlocked={toggleIsButtonsBlocked}/>} />
                     </Routes>
                 </div>
                 

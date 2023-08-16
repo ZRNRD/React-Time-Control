@@ -11,7 +11,6 @@
         width: 300px;
         height: 300px;
         margin: 0 auto;
-        //background: url("./img/Stopwatch.jpg") no-repeat;
         background-size: cover;
     
         & img{
@@ -23,7 +22,7 @@
     &__arrow{
         position: absolute;
         left: 24.5%;
-        top: 37%;
+        top: 32%;
         width: 50%;
         height: 50%;
         &::before{
@@ -68,6 +67,18 @@
 }
 
 .spin-arrow{
+    position: absolute;
+        left: 24.5%;
+        top: 32%;
+        width: 50%;
+        height: 50%;
+        &::before{
+            content: "";
+            position: absolute;
+            left: 48.5%;
+            height: 48%;
+            border: 3px solid red;
+        }
     animation: spin 12s linear infinite;
 }
 
