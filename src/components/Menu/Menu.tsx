@@ -5,7 +5,7 @@ import style from './Menu.module.scss';
 
 export const Menu = ({changeHeader, isButtonsBlocked}:any) => {
     const [showMenu, isShowMenu] = React.useState(false);
-    const [activeButton, changeActiveButton] = React.useState('Таймер');
+    const [activeButton, changeActiveButton] = React.useState(localStorage.getItem('activeButton') || 'Таймер');
     return (
         <div className={style["menu"]}>
             <div className={showMenu ? style["menu__items-show"] : style["menu__items"]}>
@@ -13,13 +13,13 @@ export const Menu = ({changeHeader, isButtonsBlocked}:any) => {
                     <input type="button" 
                         className={activeButton === 'Таймер' ? style["menu__item-active"] : style["menu__item"]} 
                         value="Таймер"
-                        onClick={()=>{changeHeader("Таймер"); changeActiveButton('Таймер'); isShowMenu(false)}}></input>
+                        onClick={()=>{changeHeader("Таймер"); changeActiveButton('Таймер');localStorage.setItem('activeButton','Таймер'); isShowMenu(false)}}></input>
                 </NavLink>
                 <NavLink to="/stopwatch" >
                     <input type="button" 
                         className={activeButton === 'Секундомер' ? style["menu__item-active"] : style["menu__item"]} 
                         value="Секундомер"
-                        onClick={()=>{changeHeader("Секундомер"); changeActiveButton('Секундомер'); isShowMenu(false)}}></input>
+                        onClick={()=>{changeHeader("Секундомер"); changeActiveButton('Секундомер');localStorage.setItem('activeButton','Секундомер'); isShowMenu(false)}}></input>
                 </NavLink>
             </div>
             <input disabled = {isButtonsBlocked} type="button" className={style["menu-show"]} value="Меню" onClick={()=>{isShowMenu(!showMenu)}}></input>

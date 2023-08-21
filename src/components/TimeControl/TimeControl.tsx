@@ -9,7 +9,7 @@ import style from './TimeControl.module.scss';
 
 
 export const TimeControl = () => {
-    const [header, changeHeader] = React.useState("Таймер");
+    const [header, changeHeader] = React.useState(localStorage.getItem('activeButton') || "Таймер");
     const [isButtonsBlocked, toggleIsButtonsBlocked] = React.useState(false);
     return (
         <div className={style["container"]}>
