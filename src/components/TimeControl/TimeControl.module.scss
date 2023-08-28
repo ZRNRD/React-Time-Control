@@ -1,32 +1,33 @@
 .time-control{
     background: #eee;
     height: 100vh;
-}
-
-.time-control input{
-    font-size: 25px;
-    height: 50px;
-    transition: all .1s ease;
-}
-.time-control input:hover{
-    cursor: pointer;
-    background: rgb(255, 170, 73);
-}
-.time-control input:active{
-    cursor: pointer;
-    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
-}
-
-.time-control__header{
-    text-align: center;
-    font-size: 40px;
-}
-
-.time-control__content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70%;
+    input{
+        font-size: 25px;
+        height: 50px;
+        transition: all .1s ease;
+        &:hover{
+            cursor: pointer;
+            transition: all ease .5s;
+            background: rgb(255, 170, 73);
+        }
+        &:not(hover){
+            transition: all ease .5s;
+        }
+        &:active{
+            cursor: pointer;
+            box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
+        }
+    }
+    &__header{
+        text-align: center;
+        font-size: 40px;
+    }
+    &__content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70%;
+    }
 }
 
 @media (max-height: 310px){

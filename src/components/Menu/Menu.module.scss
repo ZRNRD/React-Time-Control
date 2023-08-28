@@ -2,14 +2,14 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    & input:active{
-        cursor: pointer;
-        background: rgb(255, 170, 73);
+    & input{
+        &:active{
+            cursor: pointer;
+            background: rgb(255, 170, 73);
+        }
     };
-    & input:hover{
-        cursor: pointer;
-        background: rgb(255, 170, 73);
-    }
+    
+    
     &__items{
         display: flex;
         justify-content: center;
@@ -44,5 +44,3 @@
         height: 50px;
     }
 }
-
-

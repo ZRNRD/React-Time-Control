@@ -4,67 +4,37 @@
     justify-content: center;
     align-items: center;
     height: 70%;
-}
-
-.timer__nums{
-    display: flex;
-    justify-content: center;
-    & div{
+    &__nums{
         display: flex;
         justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin: 20px;
-    }
-
-    & input{
-        border: 1px solid rgb(124, 124, 124);
-        height: 70px;
-        width: 70px;
-    }
+        & div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 20px;
+        }
     
-}
-
-.num{
-    text-align: center;
-    font-size: 100px;
-}
-
-.timer__buttons{
-    display: flex;
-    justify-content: center;
-    & input{
-        border: none;
-        height: 40px;
-        width: 150px;
-        margin: 0 10px;
-        border-radius: 5px;
-        background: rgb(138, 138, 138);
+        & input{
+            border: 1px solid rgb(124, 124, 124);
+            height: 70px;
+            width: 70px;
+        }
+        
     }
-}
-
-.timer__alarm{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background: white;
-    border: 1px solid #eee;
-    width: 70vw;
-    height: 70vh;
-    transition: all .4s ease;
-    transform: scale(0);
-    &__icon{
-        width: 80px;
-        animation: Ringing 1s ease-in-out infinite;   
+    &__buttons{
+        display: flex;
+        justify-content: center;
+        & input{
+            border: none;
+            height: 40px;
+            width: 150px;
+            margin: 0 10px;
+            border-radius: 5px;
+            background: rgb(138, 138, 138);
+        }
     }
-    &-stop{
-        margin-top: 40px;
-        border: 1px solid rgb(124, 124, 124);
-        border-radius: 5px;
-    }
-    &-show{
+    &__alarm{
         position: absolute;
         display: flex;
         justify-content: center;
@@ -75,8 +45,35 @@
         width: 70vw;
         height: 70vh;
         transition: all .4s ease;
-        transform: scale(1);
+        transform: scale(0);
+        &__icon{
+            width: 80px;
+            animation: Ringing 1s ease-in-out infinite;   
+        }
+        &-stop{
+            margin-top: 40px;
+            border: 1px solid rgb(124, 124, 124);
+            border-radius: 5px;
+        }
+        &-show{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: white;
+            border: 1px solid #eee;
+            width: 70vw;
+            height: 70vh;
+            transition: all .4s ease;
+            transform: scale(1);
+        }
     }
+}
+
+.num{
+    text-align: center;
+    font-size: 100px;
 }
 
 @keyframes Ringing{
