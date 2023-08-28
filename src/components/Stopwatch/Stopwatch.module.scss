@@ -87,3 +87,58 @@
         transform: rotate(360deg);
     }
 }
+
+@media (max-width: 480px){
+    .stopwatch{
+        display: block;
+        &__body{
+            width: 150px;
+            height: 150px;
+        }
+    }
+}
+
+@media (max-width: 340px){
+    .stopwatch{
+        &__buttons{
+            & input{
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media (max-height: 600px){
+    .stopwatch{
+        &__body{
+            width: 150px;
+            height: 150px;
+        }
+    }
+    .stopwatch{
+        &__buttons{
+            & input{
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media (max-height: 420px){
+    .stopwatch{
+        &__body{
+            width: 100px;
+            height: 100px;
+        }
+        &__buttons{
+            & input{
+                font-size: 15px;
+            }
+        }
+        &__arrow{
+            &::before{
+                border: 1px solid red;
+            }
+        }
+    }
+}

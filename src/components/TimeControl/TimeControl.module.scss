@@ -28,3 +28,11 @@
     align-items: center;
     height: 70%;
 }
+
+@media (max-height: 310px){
+    .time-control{
+        &__header{
+            font-size: 25px;
+        }
+    }
+}

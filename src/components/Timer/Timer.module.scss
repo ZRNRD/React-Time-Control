@@ -96,3 +96,45 @@
         transform: rotate(0deg);
     }
 }
+
+@media (max-width: 480px){
+    .num{
+        font-size: 50px;
+    }
+    .timer__buttons{
+        & input{
+            width: 100px;
+        }
+    }
+}
+
+@media (max-width: 340px){
+    .timer__nums{
+        & input{
+            height: 30px;
+            width: 30px;
+            font-size: 25px;
+        }
+    }
+}
+
+@media (max-height: 420px){
+    .num{
+        font-size: 30px;
+    }
+    .timer{
+        &__buttons{
+            & input{
+                font-size: 15px;
+            }
+        }
+        &__nums{
+            & input{
+                height: 30px;
+                width: 30px;
+                font-size: 25px;
+            }
+        }
+        
+    }
+}
